@@ -4,19 +4,15 @@ let quantité = Array.from(document.getElementsByClassName('quantité'))
 let trash = Array.from(document.getElementsByClassName('trash'))
 let like = document.getElementsByClassName('fas')
 
+// add button
 for (let i of addBtn) {  
 i.addEventListener('click', function (){
   i.nextElementSibling.innerHTML=Number(i.nextElementSibling.innerHTML)+1;
   somme()
 })
 }
-// for (i=0; i< length.addBtn; i++ ) {
-//   console.log(quantité)
-    // addBtn[i].addEventListener("click", function () {
-    //    quantité[i].innerHTML=Number(quantité[i].innerHTML)+1;
-      
-    // });
-  // }
+
+// minus button
   for (let i of minusBtn) {  
     i.addEventListener('click', function (){
       i.previousElementSibling.innerHTML=Number(i.previousElementSibling.innerHTML)-1;
@@ -24,7 +20,7 @@ i.addEventListener('click', function (){
     })
     }
 
-
+// trash button
 trash.map((el) =>
   el.addEventListener("click", function () {
     el.parentNode.parentNode.remove();
@@ -32,6 +28,7 @@ trash.map((el) =>
   })
 );
 
+// heart button
 for (let heart of like) {
   heart.addEventListener("click", function () {
     if(heart.style.color==="red"){
@@ -42,6 +39,7 @@ for (let heart of like) {
   });
 }
 
+// total cart and count cart
 function somme() {
   let price = document.getElementsByClassName("price");
   let quantité = document.getElementsByClassName("quantité");
